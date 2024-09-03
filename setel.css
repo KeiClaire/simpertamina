@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative; /* Menjadikan container sebagai posisi relatif untuk gambar */
+}
+
+.mydict {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px; /* Jarak antara tombol */
+}
+
+.button {
+    background-color: transparent; /* Tidak ada latar belakang */
+    color: #000000; /* Warna teks */
+    padding: 0.75em 1.5em;
+    text-align: center;
+    border: 2px solid #000000; /* Garis tepi yang lebih tebal */
+    text-decoration: none;
+    margin-left: -2px; /* Menghilangkan gap antara tombol */
+    font-size: 1em;
+    border-radius: 0.375em;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.button:first-child {
+    border-radius: 0.375em 0 0 0.375em;
+}
+
+.button:last-child {
+    border-radius: 0 0.375em 0.375em 0;
+}
+
+.no-radius {
+    border-radius: 0; /* Menghilangkan border-radius untuk tombol "Men" */
+}
+
+.button:hover {
+    color: red; /* Warna teks saat hover */
+    border-color: red; /* Warna garis tepi saat hover */
+}
+
+.corner-image {
+    position: absolute;
+    top: 0;
+    left: 23px;
+    width: 170px; /* Lebar gambar, bisa disesuaikan */
+    height: auto; /* Mempertahankan rasio aspek */
+    max-width: 100%; /* Membuat gambar responsif */
+}
+
+/* Responsif: Menyesuaikan tampilan pada layar yang lebih kecil */
+@media (max-width: 600px) {
+    .mydict {
+        flex-direction: column; /* Mengatur tombol menjadi kolom vertikal */
+        align-items: center; /* Menyelaraskan tombol ke tengah */
+    }
+
+    .button {
+        width: 90%; /* Menyesuaikan lebar tombol */
+        padding: 0.5em 1em; /* Mengurangi padding tombol pada layar kecil */
+        font-size: 0.875em; /* Mengurangi ukuran font tombol */
+    }
+
+    .corner-image {
+        width: 50%; /* Sesuaikan ukuran gambar pada layar kecil */
+        left: 10px; /* Menyesuaikan posisi gambar pada layar kecil */
+    }
+}
